@@ -1,0 +1,52 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Renders simple font-icons.
+
+##### Example
+
+    <runt-icon type="mail"></runt-icon>
+
+@element runt-icon
+@status beta
+-->
+<link rel="stylesheet" href="font.css">
+<polymer-element name="runt-font-icon" attributes="font content" noscript>
+  <template>
+    <style type="text/css">
+      :host {
+        display: inline;
+      }
+
+      :host i {
+        font-family: {{font || 'inherit'}};
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-decoration: inherit;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: -8%;
+        -webkit-font-smoothing: antialiased;
+        font-size: inherit;
+      }
+
+      :host([small]) i {
+        font-size: .7em;
+        vertical-align: 6%;
+      }
+
+      :host([large]) i {
+        font-size: 1.2em;
+        vertical-align: -10%;
+      }
+
+      :host i::before {
+        content: '{{content}}';
+      }
+    </style>
+    <i></i>
+  </template>
+</polymer-element>
